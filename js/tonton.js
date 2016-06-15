@@ -6,7 +6,7 @@ var addTontonButton = function(){
 	  var contents = '<div id="tonton_list" class="modal fade" tabindex="-1" role="dialog"aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">To whom you knock?</h4></div><div class="modal-body">'
 	  _.each(_.range(0, $("div.fit:contains('Members')").parent().next().children().length-1), function(num){
 	      username = $.trim($("li.horizontal-container .fit").eq(num).text());
-	      contents += '<img class="tontee" src="'+$("li.horizontal-container").eq(num).find("img").attr("src")+'" text="@'+username+' トントン https://appear.in/'+username+'"></img> '
+	      contents += '<img class="tontee" src="'+$("li.horizontal-container").eq(num).find("img").attr("src")+'" text="@'+username+' トントン https://appear.in/'+$.trim($('footer .dropdown-toggle .fit').text())+'"></img> '
 	  });
 	  contents += '</div></div></div></div>'
 	$('body').append(contents)
