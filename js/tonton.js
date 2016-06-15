@@ -1,16 +1,15 @@
 var addTontonButton = function(){
   setTimeout(function(){
     if (!$('.message-form textarea').length) { return; }
-    if ($('#tonton').length == 0){
-      $('.message-form textarea').parent().append('<label id="tonton" class="ember-view file-select-button btn tooltipstered"><img src="'+chrome.extension.getURL('images/btn-bell.png')+'"></label>')
-      var contents = '<div id="tonton_list" class="modal fade" tabindex="-1" role="dialog"aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">To whom you tonton?</h4></div><div class="modal-body">'
-	contents += '<img class="tontee" src="https://idobata.s3.amazonaws.com/uploads/user/icon/287/self_osscafe_plain.png" text="@yasulab トントン https://appear.in/YassLab"></img> '
-	contents += '<img class="tontee" src="https://idobata.s3.amazonaws.com/uploads/user/icon/404/175ea243963b20993028f6b102b538a5.jpeg" text="@hanachin トントン https://appear.in/YassLab"></img> '
-	contents += '<img class="tontee" src="https://idobata.s3.amazonaws.com/uploads/user/icon/2392/8c0ac895d8d7b8c36cb878b0d334dd29.jpeg" text="@himajin315 トントン https://appear.in/YassLab"></img> '
-	contents += '<img class="tontee" src="https://idobata.s3.amazonaws.com/uploads/user/icon/2633/9X9PYqQK.png" text="@nanophate トントン https://appear.in/YassLab" ></img> '
-	contents += '<img class="tontee" src="https://idobata.s3.amazonaws.com/uploads/user/icon/8271/me.png" text="@siman トントン https://appear.in/YassLab" ></img>'
-	contents += '</div></div></div></div>'
-      $('body').append(contents)
+      if ($('#tonton').length == 0){
+	  $('.message-form textarea').parent().append('<label id="tonton" class="ember-view file-select-button btn tooltipstered"><img src="'+chrome.extension.getURL('images/btn-bell.png')+'"></label>')
+	  var contents = '<div id="tonton_list" class="modal fade" tabindex="-1" role="dialog"aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">To whom you tonton?</h4></div><div class="modal-body">'
+	  _.each(_.range(0, $("div.fit:contains('Members')").parent().next().children().length-1), function(num){
+	      username = $.trim($("li.horizontal-container").eq(num).text());
+	      contents += '<img class="tontee" src="'+$("li.horizontal-container").eq(num).find("img").attr("src")+'" text="@'+username+' トントン https://appear.in/'+username+'"></img> '
+	  });
+	  contents += '</div></div></div></div>'
+	$('body').append(contents)
     }
   }, 500)
 }
