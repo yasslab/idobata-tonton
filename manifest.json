@@ -1,7 +1,7 @@
 {
   "name": "Tonton (トントン)",
   "short_name": "トントン",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "manifest_version": 2,
   "description": "Add a tonton (knock-knock) button to Idobata.",
   "icons": {
