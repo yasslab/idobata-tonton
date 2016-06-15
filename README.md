@@ -3,7 +3,7 @@ idobata-tonton
 
 idobata.io に「トントン」ボタンを追加します.
 
-![Tonton SS](https://dl.dropboxusercontent.com/u/2819285/tonton_ss.png)
+![Tonton Gif](http://g.recordit.co/l005pym5z4.gif)
 
 ## Special Thanks to
 
